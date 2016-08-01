@@ -13,6 +13,7 @@ var App = function (port) {
     self.server.use(bodyParser.urlencoded({extended: true}));
     self.server.use(session({secret:"node-gallery-test",saveUninitialized: true,resave: true}));
     self.server.use(express.static('public'));
+    self.server.use(express.static('bower_components'));
     self.port = port || 80;
 
     self.watch = function(key, callback)
