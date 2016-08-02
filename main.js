@@ -50,11 +50,12 @@ app.addRoute('/user/:userId',   'UserCtrl@find', 'GET');
 app.addRoute('/user',           'UserCtrl@save', 'POST');
 app.addRoute('/user/:userId',   'UserCtrl@update', 'PUT');
 
+app.run();
 
 mysql.connect().then(
     function(con)
     {
         db = con;
 
-        app.run();
+        
     })
