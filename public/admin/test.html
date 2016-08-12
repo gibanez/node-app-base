@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--https://egghead.io/lessons/angularjs-angular-material-containers-with-the-layout-api-->
+<html ng-app="Admin" ng-cloak>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/angular-material/angular-material.css">
+    <link rel="stylesheet" href="css/app.css">
+    <style>
+        .color1{background: lightblue;}
+        .color2{background: lightgreen;}
+    </style>
+
+</head>
+    <body class="main-bg" ng-controller="MainCtrl" ng-cloak layout="column">
+        <md-toolbar layout="row">
+            <md-button ng-click="toggleList()" hide-gt-sm aria-label="Menu">
+                <md-icon md-svg-src="img/icons/android.svg"></md-icon>
+            </md-button>
+            <h3>App</h3>
+            <md-button aria-label="Config" ng-click="toggleConfig()">
+                <md-icon md-svg-src="img/icons/android.svg"></md-icon>
+            </md-button>
+        </md-toolbar>
+        <div layout="row" class="container" flex>
+            <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-4dp" md-component-id="left">
+                <md-list ng-click="toggleList()">
+                    <md-list-item>
+                        <md-button>
+                            <md-icon md-svg-src="img/icons/android.svg" class="avatar"></md-icon>
+                            Avatar Android
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button>
+                            <md-icon md-svg-src="img/icons/angular-logo.svg" class="avatar"></md-icon>
+                            Avatar Angular
+                        </md-button>
+                    </md-list-item>
+                </md-list>
+            </md-sidenav>
+            <md-content id="content" flex>
+
+                <md-icon md-svg-src="img/icons/angular-logo.svg" class="avatar"></md-icon>
+                <h2>Avatar Angular</h2>
+                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+
+            </md-content>
+            <md-sidenav md-is-locked-open="false" class="md-whiteframe-4dp md-sidenav-right" md-component-id="config">
+                <md-list>
+                    <md-list-item>
+                        <md-button>
+                            <md-icon md-svg-src="img/icons/android.svg" class="avatar"></md-icon>
+                            Avatar Android
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button>
+                            <md-icon md-svg-src="img/icons/angular-logo.svg" class="avatar"></md-icon>
+                            Avatar Angular
+                        </md-button>
+                    </md-list-item>
+                </md-list>
+            </md-sidenav>
+
+        </div>
+
+
+
+    <script src="/angular/angular.min.js"></script>
+    <script src="/angular-animate/angular-animate.min.js"></script>
+    <script src="/angular-aria/angular-aria.min.js"></script>
+    <script src="/angular-material/angular-material.js"></script>
+    <script src="App/Controller/MainCtrl.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script>
+
+        var App = angular.module('Admin', ['ngMaterial']);
+        App.config(function($mdIconProvider) {
+            $mdIconProvider
+                    .iconSet("call", 'img/icons/sets/communication-icons.svg', 24)
+                    .iconSet("social", 'img/icons/sets/social-icons.svg', 24);
+        });
+        App.controller('MainCtrl', MainCtrl);
+
+    </script>
+
+
+</body>
+</html>

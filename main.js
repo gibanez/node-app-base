@@ -52,6 +52,11 @@ app.addRoute('/user/:userId',   'UserCtrl@update', 'PUT');
 
 app.run();
 
+var childProc = require('child_process');
+childProc.exec('"chrome.exe" http://localhost:8080', function(d){
+	console.info(d);
+});
+
 mysql.connect().then(
     function(con)
     {
