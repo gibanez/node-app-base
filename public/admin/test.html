@@ -18,7 +18,7 @@
 
             </md-sidenav>
 
-            <md-content id="content" flex layout="column" class="md-padding"    >
+            <md-content id="content" flex layout="column" class="md-padding" ng-include="template">
                 <md-content class="md-padding" layout-xs="column" layout="row">
                     <div flex-xs flex-gt-xs="50" layout="column">
                         <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
@@ -133,6 +133,7 @@
     <script src="/angular-aria/angular-aria.min.js"></script>
     <script src="/angular-material/angular-material.js"></script>
     <script src="App/Controller/MainCtrl.js"></script>
+    <script src="App/Controller/DashboardCtrl.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script>
 
@@ -143,6 +144,7 @@
                     .iconSet("social", 'img/icons/sets/social-icons.svg', 24);
         });
         App.controller('MainCtrl', MainCtrl);
+        App.controller('DashboardCtrl', DashboardCtrl);
 
     </script>
 
