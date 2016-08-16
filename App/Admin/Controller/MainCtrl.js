@@ -1,0 +1,4 @@
+var MainCtrl = function($scope)
+{
+
+};

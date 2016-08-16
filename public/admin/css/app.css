@@ -23,8 +23,8 @@ md-list-item > button{
 
 .avatar{
     position: relative;
-    width: 128px;
-    height: 128px;
+    width: 48px;
+    height: 48px;
     border: 1px solid #dddddd;
     border-radius: 50%;
     display: inline-block;
