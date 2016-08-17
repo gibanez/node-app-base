@@ -1,14 +1,14 @@
 <md-list ng-click="toggleList()">
-    <md-list-item>
-        <md-button>
-            <md-icon md-svg-src="img/icons/android.svg" class="avatar"></md-icon>
-            Avatar Android
+    <md-list-item ng-repeat="item in menu">
+        <md-button ng-click="loadModel(item.model)">
+            <md-icon md-svg-src="img/icons/{{item.icon}}.svg" class="avatar"></md-icon>
+            {{item.label}}
         </md-button>
     </md-list-item>
     <md-list-item>
-        <md-button>
+        <md-button ng-click="setTemplate('dashboard')">
             <md-icon md-svg-src="img/icons/settings.svg" class="avatar"></md-icon>
-            Avatar Angular
+            Administrar
         </md-button>
     </md-list-item>
 </md-list>
